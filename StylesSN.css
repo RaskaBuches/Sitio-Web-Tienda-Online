@@ -1,0 +1,258 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales del botón */
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover y transform en botones */
+button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Estilos en botones del menú */
+#nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#nav-links a:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Efecto hover en menú hamburguesa */
+#burger {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#burger:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Header y Navegación */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 40px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Estilos para la sección "Sobre Nosotros" */
+#about-us {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 70px; /* Margin top for desktop */
+}
+
+#about-us h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Limitar ancho de la imagen de la tienda */
+.about-image {
+    flex: 1;
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-text h3 {
+    margin-top: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center; 
+}
+
+.footer-logo,
+.footer-content,
+.social-icons {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+.footer-logo img {
+    max-width: 100%;
+    height: auto;
+    width: 150px; 
+}
+
+.social-icons a {
+    margin: 0 10px; 
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilos en responsive */
+@media (max-width: 768px) {
+    /* Página Principal */
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100vh;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        right: -50%; /* Inicia fuera de la pantalla a la derecha */
+        transition: right 0.3s ease;
+        text-align: center; /* Alinea el texto al centro */
+        padding-top: 60px; /* Espacio para el logo y el botón de cerrar */
+    }
+
+    .nav-links.active {
+        right: 0; /* Se desliza para cubrir la mitad de la pantalla */
+    }
+
+    .burger {
+        display: flex;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .logo {
+        order: -1;
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        max-height: 50px;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    /* Sección "Sobre Nosotros" */
+    #about-us {
+        margin-top: 70px; /* Margin top for mobile */
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-logo img {
+        width: 100px; 
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
